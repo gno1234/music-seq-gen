@@ -125,3 +125,6 @@ generate.py  --max_new_tokens 1024 --context "False" --config_yaml config.yaml -
 You must use the same config.yaml you used for training.
 
 If you want to use **context** to generate sequence, modify the `context.txt` and set `—context “True”`
+
+---
+All programs have additional arguments with default values that you can modify. Please check the code
