@@ -12,7 +12,7 @@ from miditok.utils import get_midi_programs
 from miditoolkit import MidiFile
 
 
-parser = argparse.ArgumentParser(description='crop and save audio file')
+parser = argparse.ArgumentParser(description='tokenize midi file and make dataset apropreate form')
 
 parser.add_argument("--midi_path", type = str)
 parser.add_argument("--split_ratio", type = float, default = 0.85)
