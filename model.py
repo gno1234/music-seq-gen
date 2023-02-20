@@ -3,7 +3,7 @@
 #based on nanoGPT
 #https://github.com/karpathy/nanoGPT
 #Relative Global Attention (RGA) added 
-#reffer from https://jaketae.github.io/
+#reffer from https://jaketae.github.io/study/relative-positional-encoding/
 ##########################################################
 
 import math
