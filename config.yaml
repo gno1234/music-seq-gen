@@ -1,0 +1,30 @@
+#if you use weight and bias logger set True
+wandb_log : False
+#write you own project name and experiment title
+wandb_project : "music_gen"
+exp_title : "my_exp"
+
+
+#init_from 
+#'scratch' init from initialized weight
+#'resume' resume training or fine tune model
+init_from : 'scratch'
+
+
+#Training config
+max_iters : 60000
+warmup_iters : 1000
+eval_interval : 2000
+log_interval : 10
+learning_rate : 6e-4
+batch_size: 32
+
+#model config
+n_layer : 12
+n_head : 12
+block_size : 512
+vocab_size : 258
+n_embd : 786
+dropout : 0
+
+dtype : 'float16'

@@ -105,16 +105,22 @@ lr_decay_iters = max_iters
 dtype = config['dtype']
 dropout = float(config['dropout'])
 n_embd = config['n_embd']
+
 wandb_log = config["wandb_log"]
+wandb_project = config['wandb_project']
 
 print("###Traning Configuration###")
 print(config)
 
+compile = False ###compile is not available in this model.
 
-compile = False
+if wandb_log == 'True':
+    wandb_log = True
+elif wandb_log == 'False':
+    wandb_log = False
 
 wandb_log = wandb_log # disabled by default
-wandb_project = 'midi gen'
+wandb_project = wandb_project
 exp_title = exp_title
 wandb_run_name = exp_title + str(time.time())
 

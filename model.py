@@ -89,7 +89,7 @@ class CausalSelfAttention(nn.Module):
         return y
 
 #################################
-#Relative Global Attention (RGA)# 
+#Relative Global Attention (RGA)# (use in this model)
 #################################
 
 class RelativeGlobalAttention(nn.Module):
