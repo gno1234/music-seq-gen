@@ -96,7 +96,7 @@ Thank you so much for providing us with an easy-to-use GPT model.
 
 Relative attention is based on:
 
-[Relative Positional Encoding](https://jaketae.github.io/study/relative-positional-encoding/)
+[https://jaketae.github.io/study/relative-positional-encoding/](https://jaketae.github.io/study/relative-positional-encoding/)
 
  
 
@@ -128,3 +128,6 @@ If you want to use **context** to generate sequence, modify the `context.txt` an
 
 ---
 All programs have additional arguments with default values that you can modify. Please check the code
+
+requirement.txt contains only additional packages that need to be installed in the colab environment. 
+When running in other environments, additional package installation may be required.
