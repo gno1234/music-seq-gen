@@ -15,6 +15,8 @@ parser.add_argument("--config_yaml", type = str, default = "./config.yaml")
 parser.add_argument("--weight_path", type = str, default = "./out/ckpt.pt")
 parser.add_argument("--max_new_tokens",type = int ,default = 1024)
 parser.add_argument("--context", type = str, default = "False" )
+parser.add_argument("--temperature", type = float, default = 1)
+parser.add_argument("--top_k", type = str, default = "None")
 args = parser.parse_args()
 
 with open(args.config_yaml) as f:
@@ -88,13 +90,18 @@ elif args.context == "False":
 ############################################################
 
 context = torch.tensor([uploaded_tokens], device='cuda:0')
-
 max_new_tokens = args.max_new_tokens
+temperature= args.temperature
 
-generated_tokens =  model.generate(context, max_new_tokens=max_new_tokens, temperature = 1)[0].tolist()
+if args.top_k == "None":
+    top_k = None
+else:
+    top_k = int(args.top_k)
+
+generated_tokens =  model.generate(context, max_new_tokens=max_new_tokens, temperature=temperature, top_k=top_k)[0].tolist()
 converted_back_midi = tokenizer([generated_tokens]) #get_midi_programs(midi)
 
 os.makedirs("./midi_export", exist_ok=True)
 midi_export_path ="./midi_export/"+ exp_title + ".mid"
 converted_back_midi.dump(midi_export_path)
-print("midi_export_path")
+print(midi_export_path)
